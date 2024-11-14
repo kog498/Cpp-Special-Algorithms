@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="HA-PC"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-14 09:27:42 CH"/>
+        <attribute name="created" value="SEEtUEM7TEFQVE9QLTVSQkFQSkE0OzIwMjQtMTEtMTQ7MDg6MTY6MDIgQ0g7MjYzMw=="/>
+        <attribute name="edited" value="SEEtUEM7TEFQVE9QLTVSQkFQSkE0OzIwMjQtMTEtMTQ7MDk6Mjc6NDIgQ0g7MTsyNzQ4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a1, b1, c1, a2, b2, c2, x, y" type="Real" array="False" size=""/>
+            <input variable="a1"/>
+            <input variable="b1"/>
+            <input variable="c1"/>
+            <input variable="a2"/>
+            <input variable="b2"/>
+            <input variable="c2"/>
+            <output expression="&quot;Ta co hpt:&quot;" newline="True"/>
+            <output expression="a1 &amp; &quot;x + &quot; &amp; b1 &amp; &quot;y = &quot; &amp; c1" newline="True"/>
+            <output expression="a2 &amp; &quot;x + &quot; &amp; b2 &amp; &quot;y = &quot; &amp; c2" newline="True"/>
+            <if expression="a1/a2 != b1/b2">
+                <then>
+                    <output expression="&quot;Phuong trinh co nghiem duy nhat:&quot;" newline="True"/>
+                    <assign variable="y" expression="(c2 - (a2*c1)/a1) / ((a2*(-b1))/a1 + b2)"/>
+                    <assign variable="x" expression="((-b1)/a1)*y + c1/a1"/>
+                    <output expression="&quot;x = &quot; &amp; x" newline="True"/>
+                    <output expression="&quot;y = &quot; &amp; y" newline="True"/>
+                </then>
+                <else>
+                    <if expression="(a1/a2 == b1/b2) &amp;&amp; (b1/b2 != c1/c2)">
+                        <then>
+                            <output expression="&quot;Phuong trinh vo nghiem!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Phuong trinh vo so nghiem!&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

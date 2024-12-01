@@ -43,19 +43,11 @@ int main() {
 	int toanHang = a * soNhan;
 	int demChuSoToanHang = demChuSo(toanHang);
 
-	if (demChuSoToanHang > demChuSoA) {
-		doLechChieuDaiSo = demChuSoToanHang - demChuSoA;
-		for (int i = soKhoangTrang - doLechChieuDaiSo; i > 0; i--) {
-			cout << " ";
-		}
-		soKhoangTrang--;
+	doLechChieuDaiSo = demChuSoToanHang - demChuSoA;
+	for (int i = soKhoangTrang - doLechChieuDaiSo; i > 0; i--) {
+		cout << " ";
 	}
-	else {
-		for (int i = soKhoangTrang; i > 0; i--) {
-			cout << " ";
-		}
-		soKhoangTrang--;
-	}
+	soKhoangTrang--;
 	cout << toanHang << endl;
 	tam /= 10;
 
@@ -66,23 +58,28 @@ int main() {
 		toanHang = a * soNhan;
 		demChuSoToanHang = demChuSo(toanHang);
 		if (demChuSoToanHang > demChuSoToanHangTruoc) {
+			soKhoangTrang--;
 			doLechChieuDaiSo = demChuSoToanHang - demChuSoToanHangTruoc;
-			for (int i = soKhoangTrang - doLechChieuDaiSo; i > 0; i--) {
+			for (int i = soKhoangTrang - 1 - doLechChieuDaiSo; i > 0; i--) {
 				cout << " ";
 			}
-			soKhoangTrang-=2;
+		}
+		else if (demChuSoToanHang == demChuSoToanHangTruoc) {
+			soKhoangTrang--;
+			for (int i = soKhoangTrang; i > 0; i--) {
+				cout << " ";
+			}
 		}
 		else {
 			for (int i = soKhoangTrang; i > 0; i--) {
 				cout << " ";
 			}
-			soKhoangTrang--;
 		}
 		cout << toanHang << endl;
 		tam /= 10;
 		demChuSoToanHangTruoc = demChuSoToanHang;
 	}
-	
+
 	cout << "------------------------\n";
 	int tich = a * b;
 	int demChuSoTich = demChuSo(tich);

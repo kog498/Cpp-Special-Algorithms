@@ -81,7 +81,7 @@ int main() {
 	}
 
 	cout << "------------------------\n";
-	int tich = a * b;
+	long long tich = a * b;
 	int demChuSoTich = demChuSo(tich);
 	doLechChieuDaiSo = demChuSoTich - demChuSoA;
 	for (int i = 5 - doLechChieuDaiSo; i > 0; i--) {
